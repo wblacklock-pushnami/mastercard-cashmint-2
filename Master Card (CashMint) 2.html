@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="Mastercard_logo.png" fetchpriority="high">
   <link rel="preload" as="image" href="giftcard-mc.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="mc_text.png" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -97,7 +98,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding: 40px 16px 60px;
+      padding: 20px 16px 60px;
     }
 
     /* ── Card ── */
@@ -136,18 +137,17 @@
     }
 
     .card h1 {
-      font-size: 28px;
-      font-weight: 800;
       margin-bottom: 22px;
-      line-height: 1.2;
-      letter-spacing: -0.6px;
-      color: var(--mc-ink);
-      text-wrap: balance;
+      display: flex;
+      justify-content: center;
+      line-height: 0;
     }
 
-    .card h1 .amount {
-      color: var(--mc-red);
-      display: inline-block;
+    .card h1 img {
+      display: block;
+      width: 100%;
+      max-width: 370px;
+      height: auto;
     }
 
     /* CTA Button — Mastercard red→orange brand gradient */
@@ -343,12 +343,10 @@
 
     /* ── Desktop adjustments ── */
     @media (min-width: 600px) {
+      .main { padding-top: 40px; }
+
       .card {
         padding: 36px 40px 40px;
-      }
-
-      .card h1 {
-        font-size: 34px;
       }
 
       .footer-links {
@@ -376,7 +374,7 @@
     <div class="card">
       <img class="mc-card" src="giftcard-mc.jpg" alt="$1,000 MasterCard Gift Card" width="800" height="510" fetchpriority="high" decoding="async">
 
-      <h1>You've Won A <span class="amount">$1,000</span> MasterCard Gift Card!</h1>
+      <h1><img src="mc_text.png" alt="You've Won A $1,000 MasterCard Gift Card!" width="370" height="82" fetchpriority="high" decoding="async"></h1>
 
       <a class="cta" id="lp-pom-button-161" href="https://pushnami.everflowclient.io/offers/17394" target="_blank" rel="noopener">Claim $1,000 Now</a>
 
